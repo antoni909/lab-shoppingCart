@@ -8,10 +8,13 @@ var cart;
 
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  // cartItems is the (rm string)parsed JSON from what is present in localStorage
   cart = new Cart(cartItems);
+  // the var cart creates new instance of Cart Object and has the object of the item saved to local storage
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
+
 function renderCart() {
   loadCart();
   clearCart();
@@ -22,14 +25,40 @@ function renderCart() {
 function clearCart() {}
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
+
 function showCart() {
 
-  // TODO: Find the table body
-
-  // TODO: Iterate over the items in the cart
+  // DONE: Find the table body
+  let tbody = document.querySelector('tbody');
   // TODO: Create a TR
-  // TODO: Create a TD for the delete link, quantity,  and the item
+  let tr = document.createElement('tr');
+  let tdRemoveLink;
+  let tdQuantity;
+  let tdItem;
+
+  // let items = localStorage.getItem(localStorage.key(i))
+  // TODO: Iterate over the items in the cart
+  for(let i = 0; i < cart.items.length; i++ ){
+    console.log(cart.items[i].product);
+    // TODO: Create a TD for the delete link, quantity,  and the item
+    tdRemoveLink = document.createElement('td')
+    tdRemoveLink.textContent = 'remove-link-here';
+    
+    tdQuantity = document.createElement('td');
+    tdQuantity.textContent = cart.items[i].quantity;
+
+    tdItem = document.createElement('td');
+    tdItem.textContent = cart.items[i].product;
+  
+    console.log(tdRemoveLink,tdQuantity,tdItem);
+  }
+  
+  tr.appendChild(tdRemoveLink);
+  tr.appendChild(tdQuantity);
+  tr.appendChild(tdItem);
+
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
+  tbody.appendChild(tr);
 
 }
 

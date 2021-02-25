@@ -1,1 +1,29 @@
 /* TODO: Make it awesome */
+
+#cart-container{
+  color: blue;
+  width: max-content;
+  border-style: solid;
+  border-color: black;
+  border-width: thin 5px;
+  padding: 10x 10px;
+  margin: 20px 10px;
+  text-align: center;
+}
+
+th tr{
+  padding: 10x 10px;
+  margin: 20px 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: .5px;
+  color: red;
+}
+
+td{
+  padding: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: .5px;
+  color: red;
+}

@@ -28,6 +28,7 @@ function handleSubmit(event) {
 
   // DONE: Prevent the page from reloading
   event.preventDefault();
+
   // Do all the things ...
   // console.log(event.target);
   addSelectedItemToCart();
@@ -37,9 +38,9 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview();
 
-  // let form = document.getElementById('catlog');
-  // form.reset();
-  // alert('item added');
+  let form = document.getElementById('catalog');
+  form.reset();
+  alert('item added');
 
 }
 

@@ -13,7 +13,7 @@ var Cart = function(items) {
 // from line 22-26
   // trying to create an instance and add add it to this.items line 6 which is part of Cart constructor
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  // DONE: Fill in this instance method to create a new CartItem and add it to this.items
 
   let newItem = new CartItem(product, quantity)
   this.items.push(newItem);
@@ -30,17 +30,20 @@ Cart.prototype.saveToLocalStorage = function() {
   // this.items refers to the arr that will hold the new object/instance of CartItem is added 
   // the key name in setItem is arbitrary
   let myCartItems = JSON.stringify(this.items);
-  localStorage.setItem('cart-items', myCartItems);
+  localStorage.setItem('cart', myCartItems);
 };
 
-// Cart.prototype.saveToLocalStorage = function() {
-//   let getCartItems = JSON.parse(localStorage.getItem('cart-items'));
-// }
+
+// my way of getting items from local storage
+//Cart.prototype.saveToLocalStorage = function() {
+//   let getCartItems = JSON.parse(localStorage.getItem('cart'));
+//}
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
-  localStorage.removeItem('item');
+
+  localStorage.removeItem('cart');
 };
 
 var CartItem = function(product, quantity) {
