@@ -31,31 +31,28 @@ function showCart() {
   // DONE: Find the table body
   let tbody = document.querySelector('tbody');
   // TODO: Create a TR
-  let tr = document.createElement('tr');
   let tdRemoveLink;
   let tdQuantity;
   let tdItem;
-
+  
   // let items = localStorage.getItem(localStorage.key(i))
   // TODO: Iterate over the items in the cart
+  let tr = document.createElement('tr');
   for(let i = 0; i < cart.items.length; i++ ){
-    console.log(cart.items[i].product);
     // TODO: Create a TD for the delete link, quantity,  and the item
     tdRemoveLink = document.createElement('td')
-    tdRemoveLink.textContent = 'remove-link-here';
-    
     tdQuantity = document.createElement('td');
-    tdQuantity.textContent = cart.items[i].quantity;
-
     tdItem = document.createElement('td');
+    
+    tdRemoveLink.textContent = 'remove-link-here';
+    tdQuantity.textContent = cart.items[i].quantity;
     tdItem.textContent = cart.items[i].product;
-  
-    console.log(tdRemoveLink,tdQuantity,tdItem);
   }
   
   tr.appendChild(tdRemoveLink);
   tr.appendChild(tdQuantity);
   tr.appendChild(tdItem);
+  
 
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
   tbody.appendChild(tr);
